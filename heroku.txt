@@ -3,4 +3,6 @@ Comandos Úteis do Heroku Cli:
 2) criar uma app no heroku --> heroku create [nomedaapp]
 3) (opcional) Configurar no site do heroku para observer um repositório do GitHub.
 4) Adicionar o addon para utilizar o postgres --> heroku addons:create heroku-postgresql:hobby-dev -a [nomedaapp] (hobbydev é o plano free para DB no heroku)
-5)
+5) log do heroku --> heroku logs --tail -a [nomedaapp]
+6) acessar o banco de dados remoto do heroku --> heroku pg:psql -a [nomedaapp]
+7) acessar o bash do heroku --> heroku run bash -a [nomedaapp]
