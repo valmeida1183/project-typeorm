@@ -1,0 +1,4 @@
+Comandos Úteis do Heroku Cli:
+1) logar no heroku --> heroku login
+2) criar uma app no heroku --> heroku create [nomedaapp]
+3) 
