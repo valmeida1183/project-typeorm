@@ -1,4 +1,7 @@
-console.log(process.env.DATABASE_URL);
+console.log('------>', process.env.DATABASE_URL);
+console.log('------>', process.env.ENTITIES);
+console.log('------>', process.env.MIGRATIONS);
+console.log('------>', process.env.PORT);
 
 module.exports = {
   type: 'postgres',
