@@ -12,10 +12,10 @@ module.exports = {
         migrationsDir: ['src/migrations/'],
         entitiesDir: 'src/models',
     },
-    /* ssl: true,
+    ssl: true,
     extra: {
         ssl: {
             rejectUnauthorized: false,
         },
-    }, */
+    },
 };
