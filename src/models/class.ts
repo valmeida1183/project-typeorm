@@ -1,31 +1,36 @@
 import {
-  Column,
-  CreateDateColumn,
-  Entity,
-  PrimaryGeneratedColumn,
-  UpdateDateColumn,
+    Column,
+    CreateDateColumn,
+    Entity,
+    OneToMany,
+    PrimaryGeneratedColumn,
+    UpdateDateColumn,
 } from 'typeorm';
+import Lesson from './lesson';
 
 @Entity() // @Entity('classes') caso o nome da tabela no bd seja diferente da entitade.
 export default class Class {
-  @PrimaryGeneratedColumn('uuid')
-  id: string;
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
 
-  @Column({
-    length: 100,
-    unique: true,
-  })
-  name: string;
+    @Column({
+        length: 100,
+        unique: true,
+    })
+    name: string;
 
-  @Column()
-  duration: number;
+    @Column()
+    duration: number;
 
-  @Column()
-  semester: number;
+    @Column()
+    semester: number;
 
-  @CreateDateColumn({ name: 'created_At' })
-  createdAt: Date;
+    @CreateDateColumn({ name: 'created_At' })
+    createdAt: Date;
 
-  @UpdateDateColumn({ name: 'updated_At' })
-  updatedAt: Date;
+    @UpdateDateColumn({ name: 'updated_At' })
+    updatedAt: Date;
+
+    @OneToMany(() => Lesson, lesson => lesson.classe)
+    lessons: Lesson[];
 }

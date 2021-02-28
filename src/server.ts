@@ -6,5 +6,5 @@ import './database';
 dotenv.config();
 
 app.listen(process.env.PORT, () => {
-  console.log('🏃 Running Server');
+    console.log('🏃 Running Server');
 });
