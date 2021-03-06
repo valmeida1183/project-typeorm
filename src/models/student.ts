@@ -8,6 +8,8 @@ import {
     PrimaryGeneratedColumn,
     UpdateDateColumn,
 } from 'typeorm';
+import { EncryptionTransformer } from 'typeorm-encrypted';
+import encriptionConfig from '../services/encriptionConfig';
 import Class from './class';
 
 @Entity()
@@ -19,6 +21,13 @@ export default class Student {
     @MaxLength(45)
     @MinLength(2)
     name: string;
+
+    @Column({
+        type: 'varchar',
+        nullable: false,
+        transformer: new EncryptionTransformer(encriptionConfig),
+    })
+    secret: string;
 
     @Column({ type: 'varchar', length: 45 })
     @MaxLength(45)

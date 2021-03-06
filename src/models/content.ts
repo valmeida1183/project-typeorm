@@ -12,7 +12,14 @@ export default class Content {
     @PrimaryGeneratedColumn('uuid')
     id: string;
 
-    @Column({ type: 'varchar', length: 250 })
+    @Column({
+        type: 'varchar',
+        length: 250,
+        transformer: {
+            from: (value: string): string => value.toLowerCase(),
+            to: (value: string): string => value.toUpperCase(),
+        },
+    })
     description: string;
 
     @Column({ type: 'varchar', length: 45 })

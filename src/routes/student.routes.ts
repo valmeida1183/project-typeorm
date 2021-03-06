@@ -8,9 +8,10 @@ const studentRouter = Router();
 studentRouter.post('/', async (req, res) => {
     try {
         const repo = getRepository(Student);
-        const { name, email, key } = req.body;
+        const { name, secret, email, key } = req.body;
         const student = repo.create({
             name,
+            secret,
             key,
             email,
         });
